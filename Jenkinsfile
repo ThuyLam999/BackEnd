@@ -9,19 +9,19 @@ pipeline {
         
         stage('Restore packages'){
             steps{
-                sh "dotnet restore BackEnd/BackendAPI/BackendAPI.sln"
+                bat "dotnet restore BackEnd/BackendAPI/BackendAPI.sln"
             }
         }
 
         stage('Clean'){
             steps{
-                sh "dotnet clean BackEnd/BackendAPI/BackendAPI.sln"
+                bat "dotnet clean BackEnd/BackendAPI/BackendAPI.sln"
             }
         }
 
         stage('Build'){
             steps{
-                sh "dotnet build BackEnd/BackendAPI/BackendAPI/BackendAPI.csproj --configuration Release"
+                bat "dotnet build BackEnd/BackendAPI/BackendAPI/BackendAPI.csproj --configuration Release"
             }
         }
 
@@ -40,7 +40,7 @@ pipeline {
     post {
         always {
             sshagent(['ssh-remote']) {
-                sh 'ssh -o StrictHostKeyChecking=no -l root 45.118.145.149 docker-compose down'
+                bat 'ssh -o StrictHostKeyChecking=no -l root 45.118.145.149 docker-compose down'
             }
             mail bcc: '', body: 'Thông báo kết quả build', cc: '', from: '', replyTo: '', subject: 'Test', to: 'thanhthuyyasou234@gmail.com'
         }
