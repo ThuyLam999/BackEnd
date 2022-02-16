@@ -9,13 +9,13 @@ pipeline {
         
         stage('Restore packages'){
             steps{
-                bat "dotnet restore BackEnd/BackendAPI/BackendAPI.sln"
+                bat "dotnet restore BackEnd/BackendAPI/BackendAPI/BackendAPI.csproj"
             }
         }
 
         stage('Clean'){
             steps{
-                bat "dotnet clean BackEnd/BackendAPI/BackendAPI.sln"
+                bat "dotnet clean BackEnd/BackendAPI/BackendAPI/BackendAPI.csproj"
             }
         }
 
@@ -27,13 +27,13 @@ pipeline {
 
         stage('Test: Unit Test'){
             steps {
-                echo "Test: Unit Test"
+                echo 'Test: Unit Test'
             }
         }
        
         stage('Test: Integration Test'){
             steps {
-                 echo "Test: Integration Test"
+                 echo 'Test: Integration Test'
             }
         }
     }
@@ -42,7 +42,7 @@ pipeline {
             sshagent(['ssh-remote']) {
                 bat 'ssh -o StrictHostKeyChecking=no -l root 45.118.145.149 docker-compose down'
             }
-            mail bcc: '', body: 'Thông báo kết quả build', cc: '', from: '', replyTo: '', subject: 'Test', to: 'thanhthuyyasou234@gmail.com'
+            mail bcc: '', body: 'Thông báo kết quả build', cc: '', from: '', replyTo: '', subject: 'Test Run', to: 'thanhthuyyasou234@gmail.com'
         }
     }
 }
