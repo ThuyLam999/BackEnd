@@ -39,9 +39,6 @@ pipeline {
     }
     post {
         always {
-            sshagent(['ssh-remote']) {
-                bat 'ssh -o StrictHostKeyChecking=no -l root 45.118.145.149 docker-compose down'
-            }
             mail bcc: '', body: 'Thông báo kết quả build', cc: '', from: '', replyTo: '', subject: 'Test Run', to: 'thanhthuyyasou234@gmail.com'
         }
     }
