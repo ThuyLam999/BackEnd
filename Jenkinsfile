@@ -9,19 +9,19 @@ pipeline {
         
         stage('Restore packages'){
             steps{
-                bat "dotnet restore BackEnd/BackendAPI/BackendAPI/BackendAPI.csproj"
+                bat "dotnet restore BackendAPI/BackendAPI.csproj"
             }
         }
 
         stage('Clean'){
             steps{
-                bat "dotnet clean BackEnd/BackendAPI/BackendAPI/BackendAPI.csproj"
+                bat "dotnet clean BackendAPI/BackendAPI.csproj"
             }
         }
 
         stage('Build'){
             steps{
-                bat "dotnet build BackEnd/BackendAPI/BackendAPI/BackendAPI.csproj --configuration Release"
+                bat "dotnet build BackendAPI/BackendAPI.csproj --configuration Release"
             }
         }
 
