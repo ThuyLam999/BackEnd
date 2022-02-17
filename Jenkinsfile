@@ -39,7 +39,7 @@ pipeline {
 
         stage('Build Docker') {
             steps{
-                    sh '''cd BackendAPI
+                bat '''cd BackendAPI
             docker rmi -f docker_backendAPI_test:1.0
             docker build -t docker_backendAPI_test:1.0 .'''
             }
@@ -47,9 +47,8 @@ pipeline {
 
         stage('Run') {
             steps{
-            sh '''docker rm -f docker_backendAPI_test
-            docker run --name docker_backendAPI_test -d -p 7489:80 docker_backendAPI_test:1.0
-            '''
+                bat '''docker rm -f docker_backendAPI_test
+            docker run --name docker_backendAPI_test -d -p 7489:80 docker_backendAPI_test:1.0'''
             }
         }
 
