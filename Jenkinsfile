@@ -27,7 +27,7 @@ pipeline {
 
         stage('Docker Build and Tag') {
             steps {    
-                bat 'docker build -t lptest999/docker_backendAPI_test:1.0.0 .' 
+                bat 'docker build --tag lptest999/docker_backendAPI_test:1.0.0 .' 
                 bat 'docker tag docker_backendAPI_test lptest999/docker_backendAPI_test:1.0.0'               
             }
         }
