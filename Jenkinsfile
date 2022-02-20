@@ -25,30 +25,31 @@ pipeline {
             }
         }
 
-        stage('Test: Unit Test'){
-            steps {
-                echo 'Test: Unit Test'
+        stage('Docker Build and Tag') {
+            steps {    
+                bat 'docker build -t docker_backendAPI_test:latest .' 
+                bat 'docker tag docker_backendAPI_test ThuyLam999/docker_backendAPI_test:latest'               
             }
         }
-       
-        stage('Test: Integration Test'){
+     
+        stage('Publish image to Docker Hub') {
             steps {
-                 echo 'Test: Integration Test'
+                withDockerRegistry([ credentialsId: "dockerhubid", url: "https://registry.hub.docker.com" ]) {
+                    bat  'docker push ThuyLam999/docker_backendAPI_test:latest'
+                }       
+            }
+        }
+     
+        stage('Run Docker container on Jenkins Agent') {
+            steps 
+			{
+                bat "docker run -d -p 8003:8080 ThuyLam999/docker_backendAPI_test"
             }
         }
 
-        stage('Build Docker') {
-            steps{
-                bat '''cd BackendAPI
-            docker rmi -f docker_backendAPI_test:1.0
-            docker build -t docker_backendAPI_test:1.0 .'''
-            }
-        }
-
-        stage('Run') {
-            steps{
-                bat '''docker rm -f docker_backendAPI_test
-            docker run --name docker_backendAPI_test -d -p 7489:80 docker_backendAPI_test:1.0'''
+        stage('Run Docker container on remote hosts') {        
+            steps {
+                bat "docker -H ssh://jenkins@172.31.28.25 run -d -p 8003:8080 ThuyLam999/docker_backendAPI_test"
             }
         }
 
