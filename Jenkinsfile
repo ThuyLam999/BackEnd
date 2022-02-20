@@ -27,15 +27,15 @@ pipeline {
 
         stage('Docker Build and Tag') {
             steps {    
-                bat 'docker build --tag lptest999/docker_backendAPI_test:1.0.0 .' 
-                bat 'docker tag docker_backendAPI_test lptest999/docker_backendAPI_test:1.0.0'               
+                bat 'docker build --tag lptest999/docker_backendAPI_test .' 
+                bat 'docker tag docker_backendAPI_test lptest999/docker_backendAPI_test'               
             }
         }
      
         stage('Publish image to Docker Hub') {
             steps {
                 withDockerRegistry([ credentialsId: "dockerhubid", url: "https://registry.hub.docker.com" ]) {
-                    bat  'docker push lptest999/docker_backendAPI_test:1.0.0'
+                    bat  'docker push lptest999/docker_backendAPI_test'
                 }       
             }
         }
@@ -43,13 +43,13 @@ pipeline {
         stage('Run Docker container on Jenkins Agent') {
             steps 
 			{
-                bat "docker run -d -p 8003:8080 lptest999/docker_backendAPI_test:1.0.0"
+                bat "docker run -d -p 8003:8080 lptest999/docker_backendAPI_test"
             }
         }
 
         stage('Run Docker container on remote hosts') {        
             steps {
-                bat "docker -H ssh://jenkins@172.31.28.25 run -d -p 8003:8080 lptest999/docker_backendAPI_test:1.0.0"
+                bat "docker -H ssh://jenkins@172.31.28.25 run -d -p 8003:8080 lptest999/docker_backendAPI_test"
             }
         }
 
