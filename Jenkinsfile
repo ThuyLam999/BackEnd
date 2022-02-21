@@ -37,22 +37,22 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId: 'dockerhubid', passwordVariable: 'password', usernameVariable: 'username')]) {
                     bat '''
                             echo "${password} | docker login -u ${username} --password-stdin"
-                    '''
-                    bat  'docker push lptest999/docker_backendapi_test' 
+                    '''   
                 }  
+                bat  'docker push lptest999/docker_backendapi_test' 
             }
         }
      
         stage('Run Docker container on Jenkins Agent') {
             steps 
 			{
-                bat "docker run -d -p 8003:8080 lptest999/docker_backendapi_test"
+                bat "docker run -d -p 5000:80 lptest999/docker_backendapi_test"
             }
         }
 
         stage('Run Docker container on remote hosts') {        
             steps {
-                bat "docker -H ssh://jenkins@172.31.28.25 run -d -p 8003:8080 lptest999/docker_backendapi_test"
+                bat "docker -H ssh://jenkins@172.31.28.25 run -d -p 5000:80 lptest999/docker_backendapi_test"
             }
         }
 
