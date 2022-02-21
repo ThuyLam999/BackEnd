@@ -34,9 +34,10 @@ pipeline {
      
         stage('Publish image to Docker Hub') {
             steps {
-                withDockerRegistry([ credentialsId: "dockerhubid", url: "https://registry.hub.docker.com" ]) {
-                    bat  'docker push lptest999/docker_backendapi_test'
-                }       
+                withCredentials([usernamePassword(credentialsId: 'dockerhubid', passwordVariable: 'password', usernameVariable: 'username')]) {
+                    bat  "echo ${password} | docker login -u ${username} --password-stdin"
+                    bat  'docker push lptest999/docker_backendapi_test' 
+                }  
             }
         }
      
