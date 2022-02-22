@@ -35,7 +35,7 @@ pipeline {
         stage('Publish image to Docker Hub') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'dockerhubid', passwordVariable: 'password', usernameVariable: 'username')]) {
-                    bat 'docker login -u ${username} -p ${password}'
+                    bat 'docker login -u %username% -p %password%'
                     bat 'docker push lptest999/docker_backendapi_test' 
                 }  
             }
