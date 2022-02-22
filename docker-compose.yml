@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+  backendapi:
+    image: ${DOCKER_REGISTRY-}backendapi
+    build:
+      context: .
+      dockerfile: BackendAPI\Dockerfile
+
+
+  sqldb:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    environment:
+      - SA_PASSWORD=2Secure*Password2
+      - ACCEPT_EULA=Y
+    ports:
+      - "1440:1433"
