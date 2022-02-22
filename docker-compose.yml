@@ -6,7 +6,8 @@ services:
     build:
       context: .
       dockerfile: BackendAPI\Dockerfile
-
+    depends_on:
+      - sqldb
 
   sqldb:
     image: mcr.microsoft.com/mssql/server:2019-latest
