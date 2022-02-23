@@ -48,8 +48,6 @@ namespace BackendAPI.Controllers
                 return BadRequest();
 
             return Ok(pl);
-        
-        
         }
     }
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lamhtpham\\Desktop\\Kiến thức\\Seft-203-C--main\\Version gốc\\seft-203-DotNet-main\\seft-203-DotNet-main\\BackendAPI\\BackendAPI\\BackendAPI.csproj": {}
+    "C:\\Users\\lamhtpham\\Desktop\\Kiến thức\\Seft-203-C--main\\Version mới\\BackendAPI\\BackendAPI\\BackendAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lamhtpham\\Desktop\\Kiến thức\\Seft-203-C--main\\Version gốc\\seft-203-DotNet-main\\seft-203-DotNet-main\\BackendAPI\\BackendAPI\\BackendAPI.csproj": {
+    "C:\\Users\\lamhtpham\\Desktop\\Kiến thức\\Seft-203-C--main\\Version mới\\BackendAPI\\BackendAPI\\BackendAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lamhtpham\\Desktop\\Kiến thức\\Seft-203-C--main\\Version gốc\\seft-203-DotNet-main\\seft-203-DotNet-main\\BackendAPI\\BackendAPI\\BackendAPI.csproj",
+        "projectUniqueName": "C:\\Users\\lamhtpham\\Desktop\\Kiến thức\\Seft-203-C--main\\Version mới\\BackendAPI\\BackendAPI\\BackendAPI.csproj",
         "projectName": "BackendAPI",
-        "projectPath": "C:\\Users\\lamhtpham\\Desktop\\Kiến thức\\Seft-203-C--main\\Version gốc\\seft-203-DotNet-main\\seft-203-DotNet-main\\BackendAPI\\BackendAPI\\BackendAPI.csproj",
+        "projectPath": "C:\\Users\\lamhtpham\\Desktop\\Kiến thức\\Seft-203-C--main\\Version mới\\BackendAPI\\BackendAPI\\BackendAPI.csproj",
         "packagesPath": "C:\\Users\\lamhtpham\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lamhtpham\\Desktop\\Kiến thức\\Seft-203-C--main\\Version gốc\\seft-203-DotNet-main\\seft-203-DotNet-main\\BackendAPI\\BackendAPI\\obj\\",
+        "outputPath": "C:\\Users\\lamhtpham\\Desktop\\Kiến thức\\Seft-203-C--main\\Version mới\\BackendAPI\\BackendAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -55,6 +55,10 @@
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[3.1.8, )"
+            },
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[3.1.22, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
