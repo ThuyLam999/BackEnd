@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lamhtpham\\Desktop\\Kiến thức\\Seft-203-C--main\\Seft-203-C--main\\BackendAPI\\BackendAPI\\BackendAPI.csproj": {}
+    "C:\\Users\\lamhtpham\\Desktop\\Kiến thức\\Seft-203-C--main\\Version gốc\\seft-203-DotNet-main\\seft-203-DotNet-main\\BackendAPI\\BackendAPI\\BackendAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lamhtpham\\Desktop\\Kiến thức\\Seft-203-C--main\\Seft-203-C--main\\BackendAPI\\BackendAPI\\BackendAPI.csproj": {
+    "C:\\Users\\lamhtpham\\Desktop\\Kiến thức\\Seft-203-C--main\\Version gốc\\seft-203-DotNet-main\\seft-203-DotNet-main\\BackendAPI\\BackendAPI\\BackendAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lamhtpham\\Desktop\\Kiến thức\\Seft-203-C--main\\Seft-203-C--main\\BackendAPI\\BackendAPI\\BackendAPI.csproj",
+        "projectUniqueName": "C:\\Users\\lamhtpham\\Desktop\\Kiến thức\\Seft-203-C--main\\Version gốc\\seft-203-DotNet-main\\seft-203-DotNet-main\\BackendAPI\\BackendAPI\\BackendAPI.csproj",
         "projectName": "BackendAPI",
-        "projectPath": "C:\\Users\\lamhtpham\\Desktop\\Kiến thức\\Seft-203-C--main\\Seft-203-C--main\\BackendAPI\\BackendAPI\\BackendAPI.csproj",
+        "projectPath": "C:\\Users\\lamhtpham\\Desktop\\Kiến thức\\Seft-203-C--main\\Version gốc\\seft-203-DotNet-main\\seft-203-DotNet-main\\BackendAPI\\BackendAPI\\BackendAPI.csproj",
         "packagesPath": "C:\\Users\\lamhtpham\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lamhtpham\\Desktop\\Kiến thức\\Seft-203-C--main\\Seft-203-C--main\\BackendAPI\\BackendAPI\\obj\\",
+        "outputPath": "C:\\Users\\lamhtpham\\Desktop\\Kiến thức\\Seft-203-C--main\\Version gốc\\seft-203-DotNet-main\\seft-203-DotNet-main\\BackendAPI\\BackendAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -70,17 +70,9 @@
               "target": "Package",
               "version": "[3.1.21, )"
             },
-            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
-              "target": "Package",
-              "version": "[1.10.14, )"
-            },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[3.1.5, )"
-            },
-            "MongoDB.Driver": {
-              "target": "Package",
-              "version": "[2.14.1, )"
             },
             "NETCore.MailKit": {
               "target": "Package",

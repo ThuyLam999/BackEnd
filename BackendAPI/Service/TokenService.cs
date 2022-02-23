@@ -1,4 +1,4 @@
-﻿using BackendAPI.Data;
+using BackendAPI.Data;
 using BackendAPI.Helpers;
 using BackendAPI.Models;
 using BackendAPI.Models.ViewModels;
@@ -174,9 +174,9 @@ namespace BackendAPI.Service
         private void RemoveOldRefreshTokens(User user)
         {
             var l_tokens = user.RefreshTokens.Where(_ => !_.IsActive && _.Expires.AddDays(m_refreshTokenDayTimeLive) <= DateTime.UtcNow).Select(_ => _);
-            foreach (var token in l_tokens)
+            for (int i = 0; i < l_tokens.Count(); i++)
             {
-                user.RefreshTokens.Remove(token);
+                _context.RefreshTokens.Remove(l_tokens.ElementAt(i));
             }
         }
 
