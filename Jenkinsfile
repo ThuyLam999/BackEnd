@@ -54,13 +54,4 @@ pipeline {
             }
         }
     }
-    post {
-        success {
-            mail bcc: '', body: 'Thông báo kết quả build', cc: '', from: '', replyTo: '', subject: 'Test Run SUCCESSFUL', to: 'thanhthuyyasou234@gmail.com'
-        }  
-
-        failure {
-            mail bcc: '', body: 'Thông báo kết quả build', cc: '', from: '', replyTo: '', subject: 'Test Run FAILED', to: 'thanhthuyyasou234@gmail.com'
-        }
-    }
 }
