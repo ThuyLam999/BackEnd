@@ -26,7 +26,7 @@ pipeline {
         }
 
         stage('Docker Build and Tag') {
-            steps {    
+            steps {
                 bat 'docker build --tag lptest999/docker_backendapi_test .' 
                 bat 'docker tag lptest999/docker_backendapi_test lptest999/docker_backendapi_test'               
             }
